@@ -2,6 +2,7 @@
 iOS App自动监控Zombie对象方案
 
 >iOS开发过程或者线上版本经常有Crash崩溃在objc_msgSend、objc_retain、objc_release等方法，这些都是典型等Zombie问题，在开发过程可以使用Instruments工具定位，但对于线上问题或者很难复的问题Instruments就很难定位了，如果能主动捕捉Zombie对象，并且Trace Zombie对象信息和释放栈，那就很容易分析问题了。本文介绍一种主动监控Zombie对象方案，方案已经上线验证一段时间了，并且已经在github上开源了。
+
 ##为什么使用ARC还会有Zombie问题？
 可能很多同学觉得使用ARC和weak属性后就不会有Zombie问题了，但App上线后还是会发现很多Zombie问题，主要是因为：
 - 还有很多地方使用assign
