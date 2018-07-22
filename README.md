@@ -64,6 +64,6 @@ stack:[0x0000000100047534,0x000000010004b2e4,0x00000001000498b0,0x000000018e9bdf
 - 支持设置最大占用内存
 - 组件在收到内存告警或超过最大内存时，通过FIFO算法释放部分对象
 
-具体请查看**[「DDZombieMonitor」](https://github.com/AlexTing0/DDZombieMonitor)**
+具体请查看[「DDZombieMonitor」](https://github.com/AlexTing0/DDZombieMonitor) 
 ## 参考
 *[So you crashed in objc_msgSend()](http://sealiesoftware.com/blog/archive/2008/09/22/objc_explain_So_you_crashed_in_objc_msgSend.html)*
