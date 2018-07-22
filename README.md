@@ -33,7 +33,7 @@ Objective-C上可以方便的使用Method swizzling hook dealloc方法监控对�
 2. 延迟释放对象
 3. ZombieHandler Class拦截消息，从而监控使Zombie对象
 方案模块结构如下图：
-![](https://github.com/AlexTing0/Monitor_Zombie_in_iOS/raw/master/images/zombie.jpg)
+![Zombie监控模块结构图](https://github.com/AlexTing0/Monitor_Zombie_in_iOS/raw/master/images/zombie.jpg)
 #### 内存优化
 一开始对象释放栈保存完整的栈，并且保存string类型，类似下面
 > "1   libdispatch.dylib    0x0000000021809823 0x21807000 + 10275"
