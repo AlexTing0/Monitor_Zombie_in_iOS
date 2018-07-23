@@ -44,6 +44,8 @@ Objective-C上可以方便的使用Method swizzling hook dealloc方法监控对�
 tid:1027
 stack:[0x0000000100047534,0x000000010004b2e4,0x00000001000498b0,0x000000018e9bdf9c,0x000000018e9bdb78,0x000000018e9c43f8,0x000000018e9c1894,0x000000018ea332fc,]
 }
+
+其实栈可以直接保存在延迟释放对象的内存上面，这样可以进一步优化内存使用。
 #### 开源
 监控组件已经开源，并且提供符号化脚本，使用也很简单，只需要几行调用就可以：
 ```
@@ -63,7 +65,12 @@ stack:[0x0000000100047534,0x000000010004b2e4,0x00000001000498b0,0x000000018e9bdf
 - 支持不同监控策略，包括App内自定义类、白名单、黑名单、所有对象
 - 支持设置最大占用内存
 - 组件在收到内存告警或超过最大内存时，通过FIFO算法释放部分对象
+#### 性能影响和稳定性
+组件上线一两个版本了，目前还没发现Crash
+cpu影响：打开Zombie检测前后相差0.2%左右，影响很小
+内存影响：Zombie组件内存开关为10M的时候，实际内存增加11M左右，10M只计算了延迟释放对象和对象释放栈，组件本身占用内存没计算在内，符合预期
 
-具体请查看[「DDZombieMonitor」](https://github.com/AlexTing0/DDZombieMonitor) 
+
+具体源码请查看[「DDZombieMonitor」](https://github.com/AlexTing0/DDZombieMonitor) 
 ## 参考
 *[So you crashed in objc_msgSend()](http://sealiesoftware.com/blog/archive/2008/09/22/objc_explain_So_you_crashed_in_objc_msgSend.html)*
