@@ -83,4 +83,5 @@ stack:[0x0000000100047534,0x000000010004b2e4,0x00000001000498b0,0x000000018e9bdf
 
 ## 参考
 *[So you crashed in objc_msgSend()](http://sealiesoftware.com/blog/archive/2008/09/22/objc_explain_So_you_crashed_in_objc_msgSend.html)*
+
 *[手动分析iOS Crash log庖丁解牛](https://www.jianshu.com/p/df4b41ecc683)*
